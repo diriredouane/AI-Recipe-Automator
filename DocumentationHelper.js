@@ -481,6 +481,26 @@ function updateDocumentationProperties(docFolder) {
         Logger.log('🔗 WordPress PDF URL updated: ' + url);
     }
 
+    // Getting Started Guide
+    const gsFiles = docFolder.getFilesByName('Getting Started Guide.pdf');
+    if (gsFiles.hasNext()) {
+        const file = gsFiles.next();
+        file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+        const url = file.getUrl();
+        props.setProperty('PDF_GETTING_STARTED_URL', url);
+        Logger.log('🔗 Getting Started PDF URL updated: ' + url);
+    }
+
+    // Slides Guide
+    const slidesFiles = docFolder.getFilesByName('Google Slides Templates Guide.pdf');
+    if (slidesFiles.hasNext()) {
+        const file = slidesFiles.next();
+        file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+        const url = file.getUrl();
+        props.setProperty('PDF_SLIDES_GUIDE_URL', url);
+        Logger.log('🔗 Slides Guide PDF URL updated: ' + url);
+    }
+
     // PHP Snippet
     const snippetFiles = docFolder.getFilesByName('wp-functions-snippet.php');
     if (snippetFiles.hasNext()) {

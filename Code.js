@@ -34,7 +34,6 @@ function onOpen() {
     .addItem('3. Update Board Details', 'updateAllBoardDetails')
     .addSeparator()
     .addItem('4. Enable Automation (Triggers)', 'setupAutomatedTriggers')
-    .addItem('5. Send Test Data (Pabbly)', 'sendSampleDataToPabbly')
     .addToUi();
 
   // 2. Help Menu

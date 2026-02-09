@@ -17,6 +17,7 @@ function installProject() {
     Logger.log("--- 🏁 Starting Project Installation ---");
 
     // 1. Création de l'onglet "Setting"
+    spreadsheet.toast("Creating settings...", "Installation", 3);
     let settingSheet = spreadsheet.getSheetByName("Setting");
     if (!settingSheet) {
         settingSheet = spreadsheet.insertSheet("Setting");
@@ -34,6 +35,7 @@ function installProject() {
     }
 
     // 2. Création de "Config_Accounts" et des Dossiers Drive
+    spreadsheet.toast("Setting up Drive folders & templates...", "Installation", 5);
     // Structure: Dossier Parent (Nom du Sheet) > Dossier Images (Pinterest Images Export)
     let imageFolderId = "";
     let copiedTemplateIds = {
@@ -60,6 +62,7 @@ function installProject() {
 
 
         // 2c. Copie des Templates Slides (dans le Parent Folder) - ROBUSTE
+        spreadsheet.toast("Copying visual templates...", "Installation", 5);
         const templateIdsToCopy = {
             pin: "1aYdeZiRritOk_hTElA-X8YhzAVbIbTdeBF-JMC0yE1I",
             collage: "1GsylTeE4QzDknZ4-ROe0xTL5RzKQ12vtCiXo41-AjeU",
@@ -100,6 +103,7 @@ function installProject() {
         }
 
         // 2e. Copie du dossier Documentation depuis le Master
+        spreadsheet.toast("Finalizing documentation...", "Installation", 5);
         try {
             const docFolder = copyDocumentationFolder(parentFolder);
             if (docFolder) {
@@ -116,6 +120,7 @@ function installProject() {
     }
 
     // On appelle la fonction d'initialisation
+    spreadsheet.toast("Initializing configuration...", "Installation", 3);
     if (typeof initializeAccountsConfigSheet === 'function') {
         initializeAccountsConfigSheet();
 

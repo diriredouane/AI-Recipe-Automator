@@ -29,7 +29,7 @@ Welcome to your automation suite! This project automatically transforms recipes 
 ## 🔑 STEP 2: Configuration (3 min)
 
 1.  **Get the Template**: 
-   Make a copy of the [AI Recipe Automator Template Sheet](https://docs.google.com/spreadsheets/d/104P8-I8k9v7D6Y0M-t1Q-e4h-M6xC5yV/copy).
+   Make a copy of the [AI Recipe Automator Template Sheet](https://docs.google.com/spreadsheets/d/1Lx8JoLlnn0LyENQDLn_-wQ27uNZU_y6nIbZAIkYmBZo/copy).
 2.  **Tab `Config_Accounts`**:
     *   **Active**: Set the status to `Active`.
     *   **WP Base URL**: Enter your site URL (e.g., `https://my-recipe-site.com`).

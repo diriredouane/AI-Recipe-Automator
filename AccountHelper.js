@@ -352,12 +352,15 @@ function _applyTriggerColumnValidation(sheet) {
  */
 function _applyFormulaToColumnO(sheet) {
     // Colonne 15 (O), on se base sur la colonne 3 (C)
-    // Pour que Google Sheets traduise correctement en "=SI(C2="";; NBCAR(C2))" en français
-    // On doit utiliser la notation US avec virgules et noms anglais : IF, LEN
-    // La notation ",," en US devient ";;" en FR
-    const formula = '=IF(RC3="",, LEN(RC3))';
+    // Pour garantir la compatibilité avec un Sheet en Français, on utilise setFormulasLocal
+    // avec la syntaxe locale (SI, NBCAR, ;)
+    const range = sheet.getRange(2, 15, 1000, 1);
+    const formulas = [];
 
-    // Appliquer sur les 1000 premières lignes
-    sheet.getRange(2, 15, 1000, 1).setFormulaR1C1(formula);
-    Logger.log(`✅ Character count formula (FR translated) applied to column O for ${sheet.getName()}.`);
+    for (let i = 2; i <= 1001; i++) {
+        formulas.push([`=SI(C${i}="";;NBCAR(C${i}))`]);
+    }
+
+    range.setFormulasLocal(formulas);
+    Logger.log(`✅ Character count formula (FR) applied to column O for ${sheet.getName()}.`);
 }

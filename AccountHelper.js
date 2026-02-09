@@ -352,15 +352,13 @@ function _applyTriggerColumnValidation(sheet) {
  */
 function _applyFormulaToColumnO(sheet) {
     // Colonne 15 (O), on se base sur la colonne 3 (C)
-    // Pour garantir la compatibilité avec un Sheet en Français, on utilise setFormulasLocal
-    // avec la syntaxe locale (SI, NBCAR, ;)
+    // Pour garantir la compatibilité avec un Sheet en Français, on utilise setFormulaLocal
+    // (Note: setFormulasLocal au pluriel n'existe pas en Apps Script, on utilise une boucle)
     const range = sheet.getRange(2, 15, 1000, 1);
-    const formulas = [];
 
     for (let i = 2; i <= 1001; i++) {
-        formulas.push([`=SI(C${i}="";;NBCAR(C${i}))`]);
+        sheet.getRange(i, 15).setFormulaLocal(`=SI(C${i}="";;NBCAR(C${i}))`);
     }
 
-    range.setFormulasLocal(formulas);
     Logger.log(`✅ Character count formula (FR) applied to column O for ${sheet.getName()}.`);
 }

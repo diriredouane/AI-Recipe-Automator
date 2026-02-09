@@ -352,11 +352,10 @@ function _applyTriggerColumnValidation(sheet) {
  */
 function _applyFormulaToColumnO(sheet) {
     // Colonne 15 (O), on se base sur la colonne 3 (C)
-    // IMPORTANT : Apps Script utilise TOUJOURS la syntaxe US (IF, LEN, virgule) dans le code.
-    // Google Sheets traduit AUTOMATIQUEMENT en Français (SI, NBCAR, ;) dans l'interface pour l'utilisateur.
-    // Utiliser setFormula sur une plage ajuste automatiquement les références (C2 -> C3, etc.)
+    // Utilisation du point-virgule (;) pour la compatibilité avec les Sheets en Français.
+    // Google Sheets gère la traduction des fonctions (IF -> SI, LEN -> NBCAR) automatiquement.
     const range = sheet.getRange(2, 15, 1000, 1);
-    range.setFormula('=IF(C2="", "", LEN(C2))');
+    range.setFormula('=IF(C2=""; ""; LEN(C2))');
 
-    Logger.log(`✅ Character count formula (US syntax, auto-translated to FR) applied to column O for ${sheet.getName()}.`);
+    Logger.log(`✅ Character count formula (semicolon fix) applied to column O for ${sheet.getName()}.`);
 }

@@ -104,7 +104,12 @@ Import my pre-configured workflows by clicking these links.
 
 ---
 
-### 🆘 Need Help?
-- Check logs in **Extensions > Apps Script > Executions**.
-- Verify that your WordPress has the *WP Recipe Maker* plugin active.
-- Verify that Pabbly is receiving data correctly.
+---
+
+### 👤 Author & Support
+Created by **Redouane Diri**  
+📧 Email: [redouane.diri@gmail.com](mailto:redouane.diri@gmail.com)  
+For any questions, support, or custom modification requests, feel free to reach out!
+
+---
+*Developed for the Google Gemini 2.0 Hackathon.*

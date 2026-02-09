@@ -273,9 +273,9 @@ function createSiteDataSheets() {
 
                 // Ajouter des lignes d'exemple pour tester
                 const sampleData = [
-                    ["", "", "Exemple 1", "https://drive.google.com/file/d/1WsR5TNeCfvCXXs5aCc0T2-9QhWvIDJrC/view?usp=drivesdk", "FB Source - The Recipe Nest", "https://www.facebook.com/122113620584675181/posts/122152372088675181"],
-                    ["", "", "Exemple 2", "https://drive.google.com/file/d/1nLJA7gquWKy9D4jTxSIta5dKdRs8h67Q/view?usp=drivesdk", "FB Source - The Recipe Nest", "https://www.facebook.com/869094868587904/posts/1270894365074617"],
-                    ["", "", "Exemple 3", "https://drive.google.com/file/d/1KtOJDQqkjFKRerqZMHhWLtRU8HZFDaiD/view?usp=drivesdk", "FB Source - The Recipe Nest", "https://www.facebook.com/869094868587904/posts/1271152868382100"]
+                    ["", "", "Campfire Chicken Pot Pie Packets – Creamy, Cozy & Foil-Wrapped for Fall Nights", "https://drive.google.com/file/d/1WsR5TNeCfvCXXs5aCc0T2-9QhWvIDJrC/view?usp=drivesdk", "", ""],
+                    ["", "", "This cranberry chutney combines tart cranberries and sweet apples with warm spices for a flavor-packed holiday side dish that’s anything but ordinary. | Get the recipe at the link in the comments ⬇️", "https://drive.google.com/file/d/1KtOJDQqkjFKRerqZMHhWLtRU8HZFDaiD/view?usp=drivesdk", "", ""],
+                    ["", "", "Olive Gardens Slow Cooker Chicken Pasta is Our New Favorite Easy Weeknight Recipe | Get the recipe at the link in the comments ⬇️", "https://drive.google.com/file/d/1wq6g4ilMJ6isSW1XXPwpYCZ6eArDL2du/view?usp=drivesdk", "", ""]
                 ];
                 dataSheet.getRange(2, 1, 3, 6).setValues(sampleData);
 

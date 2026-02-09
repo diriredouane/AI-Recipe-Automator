@@ -1,0 +1,11 @@
+# Google Apps Script internal files
+.clasp.json
+
+# Local artifacts and temporary files
+.gemini/
+artifacts/
+tmp/
+node_modules/
+
+# OS files
+.DS_Store
